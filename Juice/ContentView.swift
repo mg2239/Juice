@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import IOKit.ps
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("A List Item")
+            Text("A Second List Item")
+            Text("A Third List Item")
+        }
     }
 }
 
