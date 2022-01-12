@@ -17,10 +17,12 @@ struct Battery {
             return "🧃"
         default:
             if self.timeToEmpty < 0 {
-                return ""
+                return "🤔"
             }
-            let hours = self.timeToEmpty / 60
-            let minutes = self.timeToEmpty % 60
+            let hours = String(self.timeToEmpty / 60)
+            let min = self.timeToEmpty % 60
+            // some jank left pad
+            let minutes = min < 10 ? "0\(min)" : String(min)
             return "\(hours):\(minutes)"
         }
     }

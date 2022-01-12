@@ -30,16 +30,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateTitle()
         let menu = initMenu()
         self.statusBarItem.menu = menu
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {_ in self.updateTitle()})
+        self.timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: {_ in self.updateTitle()})
         NSApp.activate(ignoringOtherApps: true)
     }
     
     func initMenu() -> NSMenu {
         let menu = NSMenu()
-        let prefs = NSMenuItem()
-        prefs.title = "Preferences..."
         let quit = NSMenuItem(title: "Quit Juice", action: #selector(quit), keyEquivalent: "q")
-        menu.addItem(prefs)
         menu.addItem(quit)
         return menu
     }
