@@ -8,15 +8,45 @@
 import Foundation
 
 struct Battery {
-    static func getTimeRemaining() -> String {
-        let time = IOPSGetTimeRemainingEstimate()
-        if time < 0 {
-            return time == -2.0 ? "🧃" : "🤔"
+    var powerSource = "unknown"
+    var timeToEmpty = 0
+    
+    func getTimeRemaining() -> String {
+        switch self.powerSource {
+        case "ac":
+            return "🧃"
+        default:
+            if self.timeToEmpty < 0 {
+                return ""
+            }
+            let hours = self.timeToEmpty / 60
+            let minutes = self.timeToEmpty % 60
+            return "\(hours):\(minutes)"
         }
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute]
-        formatter.unitsStyle = .positional
-        let formattedString = formatter.string(from: TimeInterval(time))!
-        return formattedString
+    }
+    
+    init() {
+        guard
+            let blob = IOPSCopyPowerSourcesInfo(),
+            let list = IOPSCopyPowerSourcesList(blob.takeRetainedValue()),
+            let array = list.takeRetainedValue() as? [Any],
+            array.count > 0,
+            let dict = array[0] as? NSDictionary
+        else {
+            return
+        }
+        
+        timeToEmpty = dict[kIOPSTimeToEmptyKey] as? Int ?? 0
+        
+        if let value = dict[kIOPSPowerSourceStateKey] as? String {
+            switch value {
+            case kIOPSACPowerValue:
+                powerSource = "ac"
+            case kIOPSBatteryPowerValue:
+                powerSource = "battery"
+            default:
+                powerSource = "unknown"
+            }
+        }
     }
 }
