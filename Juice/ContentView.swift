@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import IOKit.ps
 
 struct ContentView: View {
     var body: some View {
