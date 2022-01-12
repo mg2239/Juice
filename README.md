@@ -7,5 +7,5 @@ Small + lightweight app that gives you battery information for your MacBook.
 
 ## Planned features
 - Battery condition
-- Design + max capacity
+- Max capacity percent of total capacity
 - Move from menu to SwiftUI view
