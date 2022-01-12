@@ -13,6 +13,7 @@
 		D1363F94278DFD590042B66B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1363F93278DFD590042B66B /* Preview Assets.xcassets */; };
 		D1363FA0278E07930042B66B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1363F9F278E07930042B66B /* IOKit.framework */; platformFilter = maccatalyst; };
 		D1363FA2278E0FCA0042B66B /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1363FA1278E0FCA0042B66B /* Battery.swift */; };
+		D1C04B7F278E93C9007E2833 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C04B7E278E93C9007E2833 /* PopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D1363F9D278DFFE90042B66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D1363F9F278E07930042B66B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		D1363FA1278E0FCA0042B66B /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		D1C04B7E278E93C9007E2833 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				D1363F9D278DFFE90042B66B /* Info.plist */,
 				D1363F8C278DFD590042B66B /* JuiceApp.swift */,
 				D1363F8E278DFD590042B66B /* ContentView.swift */,
+				D1C04B7E278E93C9007E2833 /* PopupView.swift */,
 				D1363FA1278E0FCA0042B66B /* Battery.swift */,
 				D1363F90278DFD590042B66B /* Assets.xcassets */,
 				D1363F95278DFD590042B66B /* Juice.entitlements */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1363F8F278DFD590042B66B /* ContentView.swift in Sources */,
+				D1C04B7F278E93C9007E2833 /* PopupView.swift in Sources */,
 				D1363F8D278DFD590042B66B /* JuiceApp.swift in Sources */,
 				D1363FA2278E0FCA0042B66B /* Battery.swift in Sources */,
 			);
